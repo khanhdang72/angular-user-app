@@ -1,0 +1,24 @@
+<h3>User Form</h3>
+
+<form [formGroup]="userForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="Ex. John" formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Ex. Smith" formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Age</mat-label>
+    <input matInput placeholder="Ex. 20" formControlName="age">
+  </mat-form-field>
+</form>
+
+<button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+<button mat-raised-button (click)="goBack()">Back</button>
+<button mat-raised-button color="warn" (click)="resetAll()">Reset All</button>
+
+<p>Form Value: {{ userForm.value | json }}</p>
